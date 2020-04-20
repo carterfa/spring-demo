@@ -11,18 +11,30 @@ import java.util.List;
 
 public class SpeakerServiceImpl implements SpeakerService {
 
-    private SpeakerRepository repository = new HibernateSpeakerRepositoryImpl();
+    //private SpeakerRepository repository = new HibernateSpeakerRepositoryImpl();
 
-    public List<Speaker> findAll() {return repository.findAll(); }
+    private SpeakerRepository repository;
 
-//    public SpeakerServiceImpl(){
-//        System.out.println("SpeakServiceImpl no args constructor");
-//    }
-//
-//    public SpeakerServiceImpl(SpeakerRepository speakerRepository){
-//        System.out.println("SpeakServiceImpl repository constructor");
-//        repository = speakerRepository;
-//    }
+    public SpeakerServiceImpl(){
+       // System.out.println("SpeakServiceImpl no args constructor");
+    }
+
+    public SpeakerServiceImpl(SpeakerRepository repository){
+        //System.out.println("SpeakServiceImpl repository constructor");
+        this.repository = repository;
+    }
+
+    public List<Speaker> findAll() {
+        return repository.findAll();
+    }
+
+    public void setSpeakerRepository(SpeakerRepository repository) {
+        this.repository = repository;
+    }
+
+
+
+
 //
 //    public List<Speaker> findAll(){
 //        return repository.findAll();
