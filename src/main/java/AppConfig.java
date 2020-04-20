@@ -1,4 +1,4 @@
-import com.pluralsight.repository.HibernateSpeakerRepositoryImpl;
+/*import com.pluralsight.repository.HibernateSpeakerRepositoryImpl;
 import com.pluralsight.repository.SpeakerRepository;
 import com.pluralsight.service.SpeakerService;
 import com.pluralsight.service.SpeakerServiceImpl;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Scope;
 @ComponentScan({"com.pluralsight"})
 public class AppConfig {
 
-    /*
+
     @Bean(name ="speakerService")
     @Scope(value= BeanDefinition.SCOPE_SINGLETON)
     public SpeakerService getSpeakerService(){
@@ -28,6 +28,6 @@ public class AppConfig {
         return new HibernateSpeakerRepositoryImpl();
     }
 
-     */
 
 }
+*/

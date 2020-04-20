@@ -9,27 +9,27 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("speakerService")
 public class SpeakerServiceImpl implements SpeakerService {
 
-    private SpeakerRepository repository;
+    private SpeakerRepository repository = new HibernateSpeakerRepositoryImpl();
 
-    public SpeakerServiceImpl(){
-        System.out.println("SpeakServiceImpl no args constructor");
-    }
+    public List<Speaker> findAll() {return repository.findAll(); }
 
-    @Autowired
-    public SpeakerServiceImpl(SpeakerRepository speakerRepository){
-        System.out.println("SpeakServiceImpl repository constructor");
-        repository = speakerRepository;
-    }
-
-    public List<Speaker> findAll(){
-        return repository.findAll();
-    }
-
-    public void setRepository(SpeakerRepository repository) {
-        System.out.println("SpeakServiceImpl setter");
-        this.repository = repository;
-    }
+//    public SpeakerServiceImpl(){
+//        System.out.println("SpeakServiceImpl no args constructor");
+//    }
+//
+//    public SpeakerServiceImpl(SpeakerRepository speakerRepository){
+//        System.out.println("SpeakServiceImpl repository constructor");
+//        repository = speakerRepository;
+//    }
+//
+//    public List<Speaker> findAll(){
+//        return repository.findAll();
+//    }
+//
+//    public void setRepository(SpeakerRepository repository) {
+//        System.out.println("SpeakServiceImpl setter");
+//        this.repository = repository;
+//    }
 }
